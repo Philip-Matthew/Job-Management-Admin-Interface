@@ -1,0 +1,33 @@
+# ========================
+# Node modules
+# ========================
+node_modules/
+**/node_modules/
+server/node_modules/
+client/node_modules/
+
+# ========================
+# Environment Variables
+# ========================
+.env
+.env.* 
+client/.env
+server/.env
+
+# ========================
+# Dist folders
+# ========================
+dist/
+build/
+.DS_Store
+*.log
+
+# ========================
+# VS code
+# ========================
+.vscode/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
