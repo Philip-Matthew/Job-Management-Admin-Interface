@@ -3,7 +3,7 @@ import FilterBar from "../components/FilterBar";
 import JobCard from "../components/JobCard";
 import { getJobs } from "../api/api.js";
 import JobForm from "../components/JobForm.jsx";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [isJobFormVisible, setJobFormVisible] = useState(false);
@@ -15,11 +15,6 @@ const Home = () => {
   const closeJobForm = () => {
     setJobFormVisible(false);
   };
-
-  const { pathname } = useLocation();
-
-  const isActive = (path) =>
-    pathname === path ? "text-[#6B7280]" : "text-black font-medium";
 
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -43,7 +38,7 @@ const Home = () => {
   return (
     <div className="relative w-full bg-[#FFFFFF] ">
       {/* NavBar */}
-      <div className="py-4 font-weight-600 text-md">
+      <div className="py-4 font-weight-900 text-md">
         <nav className="w-[65%] mx-auto drop-shadow-lg border-[#E5E7EB] bg-[#FFFFFF]  py-3 rounded-full flex items-center justify-evenly">
           {/* Logo */}
           <Link to="/" className="">
@@ -53,37 +48,32 @@ const Home = () => {
           {/* Navigation */}
           <Link
             to="/"
-            className={`${isActive(
-              "/"
-            )} hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105 rounded-md bg-white px-4 py-2`}
+            className={`
+              "/" hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105 rounded-md bg-white px-4 py-2`}
           >
             Home
           </Link>
           <h2
-            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2  ${isActive(
-              "/"
-            )} cursor-pointer`}
+            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2  
+              "/" cursor-pointer`}
           >
             Find Jobs
           </h2>
           <h2
-            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2 ${isActive(
-              "/find-talents"
-            )} cursor-pointer`}
+            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2 
+              "/find-talents" cursor-pointer`}
           >
             Find Talents
           </h2>
           <h2
-            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2 ${isActive(
-              "/about"
-            )} cursor-pointer`}
+            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2 
+              "/about" cursor-pointer`}
           >
             About Us
           </h2>
           <h2
-            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2 ${isActive(
-              "/testimonials"
-            )} cursor-pointer`}
+            className={`hover:text-black transition-all duration-200 ease-in-out hover:shadow-lg hover:scale-105  rounded-md bg-white px-4 py-2 
+              "/testimonials" cursor-pointer`}
           >
             Testimonials
           </h2>

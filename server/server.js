@@ -34,7 +34,7 @@ app.use(
 app.use(express.json());
 
 // Routes
-app.use("/api/jobs", jobsRoute);
+app.use("/", jobsRoute);
 
 // Start server
 const PORT = process.env.PORT || 5000;
